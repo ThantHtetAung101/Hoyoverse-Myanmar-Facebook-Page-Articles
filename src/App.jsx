@@ -8,7 +8,7 @@ import Loader from './assets/components/Loader'
 const App = () => {
   const rootUrl = 'https://graph.facebook.com/'
   const pageId = '133156453212661'
-  const accessToken = process.env.ACCESS_TOKEN
+  const accessToken = process.env.REACT_APP_PAGE_ACCESS_TOKEN
   const [posts, setPosts] = useState([])
   const [filteredPosts, setFilteredPosts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
