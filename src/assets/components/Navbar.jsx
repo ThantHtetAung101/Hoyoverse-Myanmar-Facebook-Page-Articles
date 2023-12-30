@@ -23,9 +23,9 @@ const Navbar = ({ tagSearch }) => {
     setActiveTag(tag);
   }
   return (
-    <nav className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-between ms-10 mt-5'>
+    <nav className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-between ms-5 mt-5'>
       <img src={logo} alt="logo" className='max-w-[200px]' />
-      <div className="mobile-tag grid sm:hidden grid-cols-4 gap-3 w-[300px] relative me-5 mt-5 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0">
+      <div className="mobile-tag grid sm:hidden grid-cols-4 gap-3 w-[300px] relative mt-5 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0">
         <button onClick={() => { searchByTag('all') }} className={`all ${activeTag == 'all' ? 'bg-purple-500' : 'bg-purple-300'} text-white rounded-xl h-[35px] w-[100px] flex justify-center items-center shadow pointer-cursor`}>All</button>
         <button onClick={() => { searchByTag('lore') }} className={`lore ${activeTag == 'lore' ? 'bg-purple-500' : 'bg-purple-300'} text-white rounded-xl h-[35px] w-[100px] flex justify-center items-center shadow pointer-cursor`}>Lores</button>
         <button onClick={() => { searchByTag('guide') }} className={`guide ${activeTag == 'guide' ? 'bg-purple-500' : 'bg-purple-300'} text-white rounded-xl h-[35px] w-[100px] flex justify-center items-center shadow pointer-cursor`}>Guides</button>
