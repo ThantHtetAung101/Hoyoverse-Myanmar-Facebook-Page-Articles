@@ -88,7 +88,7 @@ const Article = ({ post }) => {
                         <span>{totalComments}</span>
                         <span>Comments</span>
                     </div>
-                    <a href={permalink_url} target='_blank'>
+                    <a href={permalink_url.replace("www", "m")} target='_blank'>
                         <div className="flex inter items-center gap-1 font-semibold text-sm sm:text-base md:text-base lg:text-base xl:text-base">
                             <span>Read More</span>
                             <i className="text-[16px] ri-arrow-right-line"></i>
