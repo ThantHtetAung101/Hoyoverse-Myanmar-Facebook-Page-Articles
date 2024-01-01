@@ -8,7 +8,7 @@ import Loader from './assets/components/Loader'
 const App = () => {
   const rootUrl = 'https://graph.facebook.com/'
   const pageId = '133156453212661'
-  const accessToken = import.meta.env.VITE_PAGE_ACCESS_TOKEN
+  const accessToken = 'EAAWQXUIxj2kBO4O9w1d4k5wLHOyDppNObciqant9hgWrUTdbLtJNZAlbPmG7HzwJmE1CnleByiVuDWDVoWjZAUC0PkCmprzONPyckPyIy2h8BabCMNMqwRR2iSQNlCyavz3QtcvSVaZAJEYuYd9TdydxOrTbIT6jpEZCAfK6UliYWxhnNyWcc9EvbvmujCoZD'
   const [posts, setPosts] = useState([])
   const [filteredPosts, setFilteredPosts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -29,6 +29,9 @@ const App = () => {
 
             setPosts(newPosts);
             localStorage.setItem('posts', JSON.stringify(newPosts));
+            let currentDate = new Date()
+            localStorage.setItem('expireDate', currentDate.getDate())
+            localStorage.setItem('expireMonth', currentDate.getMonth())
             setIsLoading(false);
           } else {
             fetchURl = null;
@@ -42,15 +45,25 @@ const App = () => {
     };
 
     const storedPosts = JSON.parse(localStorage.getItem('posts'));
-
-    if (storedPosts && storedPosts.length > 0) {
-      setPosts(storedPosts);
-      setIsLoading(false);
+    let expireDate = localStorage.getItem('expireDate')
+    let expireMonth = localStorage.getItem('expireMonth')
+    let current = new Date()
+    if (storedPosts && storedPosts.leng > th > 0) {
+      if (current.getDate() == expireDate && current.getMonth() == expireMonth) {
+        setPosts(storedPosts);
+        setIsLoading(false);
+      } else {
+        localStorage.clear()
+        fetchData();
+      }
     } else {
       fetchData();
     }
   }, []);
 
+  const cleanUpLocalStorage = () => {
+
+  }
   const tagSearch = (tag) => {
     setFilteredPosts([])
     posts.forEach(post => {

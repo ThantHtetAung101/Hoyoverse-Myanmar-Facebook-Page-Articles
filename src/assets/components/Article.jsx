@@ -88,7 +88,7 @@ const Article = ({ post }) => {
                         <span>{totalComments}</span>
                         <span>Comments</span>
                     </div>
-                    <a href='https://m.facebook.com/story.php?story_fbid=pfbid0AgBfwUwzxGTAbieAg13xgimBrNNED2ej9uGfLaCxv9t8326vu7pAsyVRrv2GLC78l&id=100049585521480&mibextid=Nif5oz' target='_blank'>
+                    <a href={permalink_url} target='_blank'>
                         <div className="flex inter items-center gap-1 font-semibold text-sm sm:text-base md:text-base lg:text-base xl:text-base">
                             <span>Read More</span>
                             <i className="text-[16px] ri-arrow-right-line"></i>
