@@ -7,7 +7,7 @@ import Loader from './assets/components/Loader'
 
 const App = () => {
   const rootUrl = 'https://graph.facebook.com/'
-  const pageId = '133156453212661'
+  const pageId = '219163101275373'
   const accessToken = import.meta.env.VITE_PAGE_ACCESS_TOKEN
   const [posts, setPosts] = useState([])
   const [filteredPosts, setFilteredPosts] = useState([])
